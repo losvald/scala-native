@@ -1,6 +1,6 @@
 def isShorterThan(x@: List[Any], y@: List[Any]): Boolean = {
-  var xTail = x.head :: x.tail; // FIXME need 2nd-class variable
-  var yTail = y.head :: y.tail; // FIXME need 2nd-class variable
+  var xTail@ = x.head :: x.tail;
+  var yTail@ = y.head :: y.tail;
 
   while (!yTail.isEmpty && !xTail.isEmpty) {
     xTail = xTail.tail;

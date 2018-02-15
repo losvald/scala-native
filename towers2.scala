@@ -21,7 +21,7 @@
 // THE SOFTWARE.
 
 def run(n@: Int): Int = {
-  var movesDone = 0; // TODO: movesDone@: Int@ or movesDone@: Int
+  var movesDone@ = 0;
   val piles@: Array[Int] = arrayTabulate[Int](3, (i: Int) => -1);
   val next@: Array[Int] = arrayTabulate[Int](n + 1, (i: Int) => -1);
 
@@ -51,7 +51,7 @@ def run(n@: Int): Int = {
   };
 
   def buildTowerAt@(pile@: Int, disks: Int): Unit = {
-    var i = disks; // i (and disks) may be 2nd-class only if piles is
+    var i@ = disks; // i (and disks) may be 2nd-class only if piles is
     while (i >= 0) {
       pushDisk(i, pile);
       i = i - 1

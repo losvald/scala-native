@@ -23,6 +23,7 @@
 def abs(n: Int) = if (n < 0) -n else n;
 
 def mkBounce@(random@: Array[Int]): () => Boolean = {
+  // these cannot be 2nd-class variables as they are used in 1st-class fun.
   var x: Int    = rngNextInt(random)  % 500;
   var y: Int    = rngNextInt(random)  % 500;
   var xVel: Int = (rngNextInt(random) % 300) - 150;
@@ -31,7 +32,7 @@ def mkBounce@(random@: Array[Int]): () => Boolean = {
   def bounce(): Boolean = {
     val xLimit@: Int = 500;
     val yLimit@: Int = 500;
-    var bounced = false;
+    var bounced@ = false;
 
     x = x + xVel;
     y = y + yVel;
@@ -55,13 +56,13 @@ def run@(ballCount@: Int, seed@: Int) = {
   val balls@: Array[() => Boolean] = arrayTabulate[() => Boolean](ballCount,
     mkBall);
 
-  var bounces = 0;
+  var bounces@ = 0;
   def countBounce@(bounce@: () => Boolean): Unit = {
     if (bounce())
       bounces = bounces + 1
   };
 
-  var i = ballCount / 2;
+  var i@ = ballCount / 2;
   while (i > 0) {
     i = i - 1;
     arrayForeach[() => Boolean](

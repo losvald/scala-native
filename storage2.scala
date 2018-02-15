@@ -1,5 +1,5 @@
 def run(n@: Int): Int = {
-  var count = 0;
+  var count@ = 0;
   def buildTreeDepth@(depth@: Int, random@: Array[Int]) // TODO Array[Int@]
       : Array[Any] = {
     count = count + 1;
