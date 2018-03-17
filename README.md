@@ -1,12 +1,9 @@
-# Scala Native
+# MiniScala(2) ports of [Scala Native's](http://www.scala-native.org/) benchmarks
 
-[![Join the chat at https://gitter.im/scala-native/scala-native](https://badges.gitter.im/scala-native/scala-native.svg)](https://gitter.im/scala-native/scala-native?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-[![Build Status](https://travis-ci.org/scala-native/scala-native.png?branch=master)](https://travis-ci.org/scala-native/scala-native)
-
-[http://www.scala-native.org/](http://www.scala-native.org/)
+- MiniScala supports a *subset* of Scala's syntax (`*[^2].scala` files)
+- MiniScala2 supports a superset of MiniScala's syntax (`*2.scala` files)
 
 ## License
 
-Scala Native is distributed under the Scala license.
+Distributed under the same Scala license as Scala Native.
 [See LICENSE.md for details](https://github.com/scala-native/scala-native/blob/master/LICENSE.md)
