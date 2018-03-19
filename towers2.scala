@@ -20,10 +20,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-def run(n@: Int): Int = {
+def fillArrayInt@(a@: Array[Int], n: Int): Unit = {
+  var i@ = a.length;
+  while (i > 0) {
+    i = i - 1;
+    a(i) = n
+  };
+  ()
+};
+
+def run@(n@: Int): Int = {
   var movesDone@ = 0;
-  val piles@: Array[Int] = arrayTabulate[Int](3, (i: Int) => -1);
-  val next@: Array[Int] = arrayTabulate[Int](n + 1, (i: Int) => -1);
+  val piles@ = new Array[Int](3); fillArrayInt(piles, -1);
+  val next@ = new Array[Int](n + 1); fillArrayInt(next, -1);
 
   def pushDisk@(disk: Int, pile@: Int): Unit = {
     val top = piles(pile);
